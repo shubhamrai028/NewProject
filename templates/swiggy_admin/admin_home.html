@@ -1,0 +1,52 @@
+
+{% extends 'swiggy_admin/common.html' %}
+
+{% block common %}
+
+    {% load static %}
+    <body background="{% static 'images/cook-366875_1920.jpg' %}"  style="background-size: 1540px 800px">
+    {% if request.session.status %}
+    <table align="center" border="0"><br>
+    <tr>
+        <th>
+            {% include 'swiggy_admin/menu.html' %}
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+                <table align="center" border="0"><br><br>
+                    <tr>
+                        <th>
+                            <img src="{% static 'images/admin.jpg' %}" width="200" height="200">
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <h1 style="color: white">Welcome To The Admin Page</h1>
+                            <p align="center" style="color: white">Here Admin can do all the operations</p>
+                            <p align="center" style="color: white">This is Page is only access by admin.</p>
+                            <p align="center" style="color: white">If you notice any unwanted Login or</p>
+                            <p align="center" style="color: white">Content,send mail to 'shubhamrai028@gmail.com'</p>
+                        </th>
+                    </tr>
+                </table>
+        </th>
+    </tr>
+    </table>
+     {% else %}
+
+        <h1 style="text-align: center;font-family:'cursive';font-size: 25px;color: white"><br><br>
+            Please Do Login
+        </h1>
+
+    {% endif %}
+    </body>
+
+{% endblock %}

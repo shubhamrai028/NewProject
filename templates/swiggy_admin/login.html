@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<body background="{% static 'images/cook-366875_1920.jpg' %}" style="background-size: 1270px 750px">
+{% block common %}
+    <table align="center" border="0">
+    <tr>
+        <th style="text-align: center;font-size: 50px;color: white">Swiggy Admin Applications</th>
+    </tr>
+     <tr><th colspan="0" height="0" style="text-align: center;font-size: 20px;color: black;font-family: 'Andale Mono';background:lightgray">
+            Admin Login page</th></tr><br>
+    <tr>
+        <th>
+            <form action="{% url 'admin_login_check' %}"method="post">
+    {% csrf_token %}
+        <table align="center" border="0" width="300"><br>
+
+        <tr>
+            <th width="100" height="40" style="color: white">Username </th>
+            <th><input type="text" required name="admin_username"></th>
+        </tr>
+        <tr>
+            <th width="100" height="70" style="color: white">Password </th>
+            <th width="150"><input type="password" required name="admin_password"></th>
+        </tr>
+        <tr>
+            <th colspan="2" style="text-align: center">
+                <button type="submit" style="background: white">Login</button>
+            </th>
+        </tr>
+
+        {% for x in message %}
+        <tr>
+            <th colspan="2" height="80"  style="text-align: center">
+                {{ x }}
+            </th>
+        </tr>
+            {% endfor %}
+    </table>
+    </form>
+        </th>
+    </tr>
+    </table>
+
+    </body>
+{% endblock %}
+
